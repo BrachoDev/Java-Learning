@@ -13,6 +13,7 @@
 - [Data Types](#data-types)
 - [Variables and data types usage](#variables-and-data-types-usage)
 - [User Input](#user-input)
+- [UML Class Diagrams](#uml-class-diagrams)
 
 ### Class:
 
@@ -161,3 +162,9 @@ The input types are the following:
 | nextLine()    | Reads a String value from the user  |
 | nextLong()    | Reads a long value from the user    |
 | nextShort()   | Reads a short value from the user   |
+
+### UML Class Diagrams:
+
+- [Lucidchart tutorial on UML diagrams](https://www.youtube.com/watch?v=UI6lqHOVHic)
+
+- [UML to code tutorial](https://www.youtube.com/watch?v=6wyk5BrgOFo&t=185s)
