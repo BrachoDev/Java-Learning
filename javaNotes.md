@@ -13,6 +13,7 @@
 - [Data Types](#data-types)
 - [Variables and data types usage](#variables-and-data-types-usage)
 - [User Input](#user-input)
+- [Java Conditions and If Statements](#Java-Conditions-and-If-Statements)
 - [UML Class Diagrams](#uml-class-diagrams)
 
 ### Class:
@@ -162,6 +163,40 @@ The input types are the following:
 | nextLine()    | Reads a String value from the user  |
 | nextLong()    | Reads a long value from the user    |
 | nextShort()   | Reads a short value from the user   |
+
+### Java Conditions and If Statements
+
+Java supports the usual logical conditions from mathematics:
+
+- **Less than**: `a < b`
+- **Less than or equal to**: `a <= b`
+- **Greater than**: `a > b`
+- **Greater than or equal to**: `a >= b`
+- **Equal to**: `a == b`
+- **Not Equal to**: `a != b`
+
+You can use these conditions to perform different actions based on different decisions.
+
+#### Java Conditional Statements
+
+Java has the following conditional statements:
+
+- **`if`**: Specifies a block of code to be executed if a specified condition is true.
+- **`else`**: Specifies a block of code to be executed if the condition in the `if` statement is false.
+- **`else if`**: Specifies a new condition to test if the previous condition(s) were false.
+- **`switch`**: Specifies many alternative blocks of code to be executed.
+
+##### The `if` Statement
+
+Use the `if` statement to specify a block of Java code to be executed if a condition is true.
+
+##### Syntax
+
+```java
+if (condition) {
+  // block of code to be executed if the condition is true
+}
+```
 
 ### UML Class Diagrams:
 
