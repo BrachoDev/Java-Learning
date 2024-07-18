@@ -14,6 +14,7 @@
 - [Variables and data types usage](#variables-and-data-types-usage)
 - [User Input](#user-input)
 - [Java Conditions and If Statements](#Java-Conditions-and-If-Statements)
+- [types of loops in java](#types-of-loops-in-java)
 - [UML Class Diagrams](#uml-class-diagrams)
 
 ### Class:
@@ -177,7 +178,7 @@ Java supports the usual logical conditions from mathematics:
 
 You can use these conditions to perform different actions based on different decisions.
 
-#### Java Conditional Statements
+**_Java Conditional Statements_**
 
 Java has the following conditional statements:
 
@@ -186,16 +187,115 @@ Java has the following conditional statements:
 - **`else if`**: Specifies a new condition to test if the previous condition(s) were false.
 - **`switch`**: Specifies many alternative blocks of code to be executed.
 
-##### The `if` Statement
+**_Syntax_**
 
-Use the `if` statement to specify a block of Java code to be executed if a condition is true.
-
-##### Syntax
+**if Statement**
 
 ```java
 if (condition) {
   // block of code to be executed if the condition is true
 }
+```
+
+**if-else Statement**
+
+```java
+if (condition) {
+    // code to be executed if condition is true
+} else {
+    // code to be executed if condition is false
+}
+```
+
+**else-if Statement**
+
+```java
+if (condition1) {
+    // code to be executed if condition1 is true
+} else if (condition2) {
+    // code to be executed if condition1 is false and condition2 is true
+} else {
+    // code to be executed if condition1 and condition2 are false
+}
+```
+
+**switch Statement**
+
+```java
+switch (variable) {
+    case value1:
+        // code to be executed if variable equals value1
+        break;
+    case value2:
+        // code to be executed if variable equals value2
+        break;
+    // you can have any number of case statements
+    default:
+        // code to be executed if variable does not match any case
+        break;
+}
+```
+
+### Types of Loops in Java:
+
+In Java, there are three primary types of loops: the for loop, the while loop, and the do-while loop. Each of these loops allows you to repeat a block of code multiple times, but they differ in their syntax and use cases.
+
+#### For Loop:
+
+The for loop is used when you know in advance how many times you want to execute a statement or a block of statements. The syntax of a for loop is:
+
+```java
+for (initialization; condition; update) {
+    // statements
+}
+```
+
+**Example**
+
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println("i = " + i);
+}
+```
+
+#### While Loop:
+
+The while loop is used when you want to execute a block of statements repeatedly as long as a condition is true. The syntax of a while loop is:
+
+```java
+while (condition) {
+    // statements
+}
+```
+
+**Example**
+
+```java
+int i = 0;
+while (i < 5) {
+    System.out.println("i = " + i);
+    i++;
+}
+```
+
+#### Do-While Loop:
+
+The do-while loop is similar to the while loop, but it guarantees that the block of code is executed at least once. The syntax of a do-while loop is:
+
+```java
+do {
+    // statements
+} while (condition);
+```
+
+**Example**
+
+```java
+int i = 0;
+do {
+    System.out.println("i = " + i);
+    i++;
+} while (i < 5);
 ```
 
 ### UML Class Diagrams:

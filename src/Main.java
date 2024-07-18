@@ -1,23 +1,41 @@
 import java.util.Scanner;
 
 public class Main {
-
-    /* Define your method here */
-    static double drivingCost(double milesPerGallon, double dollarsPerGallon, double milesDriven) {
-        return (milesDriven / milesPerGallon) * dollarsPerGallon; // Creating a formula to calculate the gas cost
-    }
-
     public static void main(String[] args) {
-        /* Type your code here. */
-        Scanner scnr = new Scanner(System.in); // Creating Scanner Object
+        // Initializing variables and scanner
+        Scanner scnr = new Scanner(System.in);
+        int arrowBaseHeight;
+        int arrowBaseWidth;
+        int arrowHeadWidth = 0;
 
-        double milesPerGallon = scnr.nextDouble(); // input for milesPerGallon
-        double dollarsPerGallon = scnr.nextDouble(); // input for dollarsPerGallon
+        // Collecting user's inputs
+        System.out.println("Enter arrow base height:");
+        arrowBaseHeight = scnr.nextInt();
 
-        // Printing each value by calling drivinCost() at 10, 50 and 400 miles:
-        System.out.printf("%.2f ", drivingCost(milesPerGallon, dollarsPerGallon, 10));
-        System.out.printf("%.2f ", drivingCost(milesPerGallon, dollarsPerGallon, 50));
-        System.out.printf("%.2f\n", drivingCost(milesPerGallon, dollarsPerGallon, 400));
+        System.out.println("Enter arrow base width:");
+        arrowBaseWidth = scnr.nextInt();
 
+        // Ensuring that arrow head width is greater than arrow base width
+        while (arrowHeadWidth <= arrowBaseWidth) {
+            System.out.println("Enter arrow head width:");
+            arrowHeadWidth = scnr.nextInt();
+        }
+        System.out.println();
+
+        // Printing the arrow base using the specified height and width
+        for(int counterHeight = 0; counterHeight < arrowBaseHeight; counterHeight++) {
+            for(int counterWidth = 0; counterWidth < arrowBaseWidth; counterWidth++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // Printing the arrow head with decreasing width
+        for(int counterHeadWidth = arrowHeadWidth; counterHeadWidth > 0 ; counterHeadWidth--) {
+            for(int counterHeadHeight = 0 ; counterHeadHeight < counterHeadWidth; counterHeadHeight++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 }
