@@ -14,7 +14,9 @@
 - [Variables and data types usage](#variables-and-data-types-usage)
 - [User Input](#user-input)
 - [Java Conditions and If Statements](#Java-Conditions-and-If-Statements)
-- [types of loops in java](#types-of-loops-in-java)
+- [Types of loops in java](#types-of-loops-in-java)
+- [Arrays](#arrays)
+- [Array List](#array-list)
 - [UML Class Diagrams](#uml-class-diagrams)
 
 ### Class:
