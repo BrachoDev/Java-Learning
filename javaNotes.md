@@ -298,6 +298,95 @@ do {
 } while (i < 5);
 ```
 
+### Arrays:
+
+`Array` = used to store multiple values in a sigle variable.
+
+`NOTE`: The data must be the same. If the Array contains Strings, we should only use Strings and nothing else
+
+```java
+public class Main {
+    public static void main(String[] args){
+        String[] cars = {"Camaro", "Corvette", "Tesla"}; // This is how a Array looks like.
+
+        cars[0] = "Mustang"; // Accessing the Array at index [0] and updating it with a new value
+
+    }
+}
+```
+
+We can also create the array and add the values later. For example:
+
+```java
+public class Main {
+    public static void main(String[] args){
+        String[] cars = new String[3] // Here, we are creating an array that can have max 3 elements.
+
+        cars[0] = "Camaro";
+        cars[1] = "Corvette";
+        cars[2] = "Tesla";
+
+    }
+}
+```
+
+To use **_For Loops_** in arrays we get the `.length` of the Array like this:
+
+```java
+public class Main {
+    public static void main(String[] args){
+        String[] cars = new String[3] // Here, we are creating an array that can have max 3 elements.
+
+        cars[0] = "Camaro";
+        cars[1] = "Corvette";
+        cars[2] = "Tesla";
+
+        for(int i = 0; i < cars.length; i++) {
+            System.out.println(cars[i]); // This will print each element in the "cars" array.
+        }
+
+    }
+}
+```
+
+### Array List:
+
+- ArraysList is a resizable array.
+- Elements can be added and removed after compilation phase.
+- Store reference data types only.
+
+**Set an ArrayList**
+
+```java
+public class Main {
+    public static void main(String[] args){
+
+        ArrayList<String> food = new ArrayList<String>(); // Setting an ArrayList that uses "Strings". We can also set "Integers", or any other type.
+
+        // Use the `.add` method to add values Array.
+        food.add("pizza");
+        food.add("hamburger");
+        food.add("hotdog");
+
+        // Use `.set()` to replace values at specific index in the array.
+        food.set(0, "Sushi");
+
+        // To remove values in an Array we use the `.remove()` Method.
+        food.remove(2);
+
+        // To clear our Array we use `.clear()`
+        food.clear();
+
+        // Similar to Arrays, we can loop throught tthis ArrayList by getting the size of the array. We use `.size()` to accomplish this.
+        for(int i = 0; i < food.size(); i++) {
+            System.out.println(food.get(i)); // Use '.get()' to access the value in an Array.
+        }
+
+
+    }
+}
+```
+
 ### UML Class Diagrams:
 
 - [Lucidchart tutorial on UML diagrams](https://www.youtube.com/watch?v=UI6lqHOVHic)
