@@ -18,6 +18,7 @@
 - [Arrays](#arrays)
 - [Array List](#array-list)
 - [UML Class Diagrams](#uml-class-diagrams)
+- [Using Classes in OOP](#using-classes-in-oop)
 
 ### Class:
 
@@ -394,3 +395,172 @@ public class Main {
 - [Lucidchart tutorial on UML diagrams](https://www.youtube.com/watch?v=UI6lqHOVHic)
 
 - [UML to code tutorial](https://www.youtube.com/watch?v=6wyk5BrgOFo&t=185s)
+
+### Using Classes in OOP:
+
+- Using classes in Java is a fundamental concept of object-oriented programming (OOP). A class is like a blueprint for creating objects. It defines the properties (attributes) and behaviors (methods) that the objects created from the class can have.
+
+**Basic Structure of a Class**
+
+Here's a simple breakdown of how a class is structured in Java:
+
+1. Class Declaration: The first step is to declare the class. The class name should start with an uppercase letter.
+2. Attributes: These are the variables that hold data for the class. They are sometimes called fields or properties.
+3. Methods: These are the functions that define the behaviors of the class.
+
+**Example of a Class**
+
+Let's break down the example of using classes in Java with the `ItemToPurchase` and `ShoppingCartPrinter` classes, which simulate a simple shopping cart system.
+
+**ItemToPurchase**
+
+- The `ItemToPurchase` class represents an item that a customer can add to their shopping cart. It has attributes to store the item's name, price, and quantity, along with methods to set and get these values.
+
+```java
+public class ItemToPurchase {
+    // Attributes (fields)
+    private String itemName;
+    private int itemPrice;
+    private int itemQuantity;
+
+    // Constructor
+    public ItemToPurchase() {
+        this.itemName = "none";
+        this.itemPrice = 0;
+        this.itemQuantity = 0;
+    }
+
+    // Mutator (setter) methods
+    public void setName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public void setPrice(int itemPrice) {
+        this.itemPrice = itemPrice;
+    }
+
+    public void setQuantity(int itemQuantity) {
+        this.itemQuantity = itemQuantity;
+    }
+
+    // Accessor (getter) methods
+    public String getName() {
+        return itemName;
+    }
+
+    public int getPrice() {
+        return itemPrice;
+    }
+
+    public int getQuantity() {
+        return itemQuantity;
+    }
+
+    // Method to print item details
+    public void printItemPurchase() {
+        System.out.println(itemName + " " + itemQuantity + " @ $" + itemPrice + " = $" + (itemPrice * itemQuantity));
+    }
+}
+```
+
+#### **_Explanation_**
+
+**Attributes (Fields)**
+
+- `itemName`, `itemPrice`, and `itemQuantity` are variables that store information about the item. They're private, meaning they can only be accessed within this class.
+
+**Constructor**
+
+- The constructor `ItemToPurchase()` initializes the attributes with default values. It's called when you create a new object of this class.
+
+**Mutator (Setter) Methods**
+
+- Methods like `setName()`, `setPrice()`, and `setQuantity()` allow you to set the values of the attributes.
+
+**Accessor (Getter) Methods**
+
+Methods like `getName()`, `getPrice()`, and `getQuantity()` allow you to retrieve the values of the attributes.
+
+**Other Methods**
+
+- `printItemPurchase()` displays the item's details.
+
+**ShoppingCartPrinter**
+
+The `ShoppingCartPrinter` class contains the main method, which is the entry point of the program:
+
+```java
+import java.util.Scanner;
+
+public class ShoppingCartPrinter {
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+        String productName;
+        int productPrice;
+        int productQuantity;
+        int cartTotal;
+
+        // Create two ItemToPurchase objects
+        ItemToPurchase item1 = new ItemToPurchase();
+        ItemToPurchase item2 = new ItemToPurchase();
+
+        // Get details for item1 from user
+        System.out.println("Item 1");
+        System.out.print("Enter the item name: ");
+        productName = scnr.nextLine();
+        item1.setName(productName);
+
+        System.out.print("Enter the item price: ");
+        productPrice = scnr.nextInt();
+        item1.setPrice(productPrice);
+
+        System.out.print("Enter the item quantity: ");
+        productQuantity = scnr.nextInt();
+        item1.setQuantity(productQuantity);
+        scnr.nextLine();  // Consume newline
+
+        // Get details for item2 from user
+        System.out.println("\nItem 2");
+        System.out.print("Enter the item name: ");
+        productName = scnr.nextLine();
+        item2.setName(productName);
+
+        System.out.print("Enter the item price: ");
+        productPrice = scnr.nextInt();
+        item2.setPrice(productPrice);
+
+        System.out.print("Enter the item quantity: ");
+        productQuantity = scnr.nextInt();
+        item2.setQuantity(productQuantity);
+
+        // Calculate and display total cost
+        cartTotal = (item1.getPrice() * item1.getQuantity()) + (item2.getPrice() * item2.getQuantity());
+        System.out.println("\nTOTAL COST");
+        item1.printItemPurchase();
+        item2.printItemPurchase();
+        System.out.println("Total: $" + cartTotal);
+    }
+}
+```
+
+#### **_Explanation_**
+
+1. Creating Objects:
+
+   - `ItemToPurchase item1 = new ItemToPurchase();` creates an object item1 of the `ItemToPurchase` class.
+
+2. Getting User Input:
+
+   - The program uses a `Scanner` object to get item details (name, price, and quantity) from the user.
+
+3. Setting Values:
+
+   - The details entered by the user are set to `item1` and `item2` using the setter methods (`setName()`, `setPrice()`, and `setQuantity()`).
+
+4. Calculating Total Cost:
+
+   - The total cost is calculated by multiplying the price and quantity of each item and summing them up.
+
+5. Displaying Information:
+
+   - The details of each item and the total cost are displayed using the `printItemPurchase()` method and `System.out.println()`.
