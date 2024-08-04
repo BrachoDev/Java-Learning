@@ -4,15 +4,15 @@ public class Monkey extends RescueAnimal{
 
     // Instance variables specific for Monkey
     private String specie;
-    private float tailLength;
-    private float height;
-    private float bodyLength;
+    private double tailLength;
+    private double height;
+    private double bodyLength;
 
     // Constructor
     public Monkey(String name, String specie, String gender, String age,
                   String weight, String acquisitionDate, String acquisitionCountry,
-                  String trainingStatus, boolean reserved, String inServiceCountry, float tailLength,
-                  float height, float bodyLength) {
+                  String trainingStatus, boolean reserved, String inServiceCountry, double tailLength,
+                  double height, double bodyLength) {
         setName(name);
         setSpecie(specie);
         setGender(gender);
@@ -33,15 +33,15 @@ public class Monkey extends RescueAnimal{
         this.specie = specie;
     }
 
-    public void setTailLength(float tailLength) {
+    public void setTailLength(double tailLength) {
         this.tailLength = tailLength;
     }
 
-    public void setHeight(float height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
-    public void setBodyLength(float bodyLength) {
+    public void setBodyLength(double bodyLength) {
         this.bodyLength = bodyLength;
     }
 
@@ -50,15 +50,15 @@ public class Monkey extends RescueAnimal{
         return specie;
     }
 
-    public float getTailLength() {
+    public double getTailLength() {
         return tailLength;
     }
 
-    public float getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public float getBodyLength() {
+    public double getBodyLength() {
         return bodyLength;
     }
 }

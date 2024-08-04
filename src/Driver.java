@@ -38,22 +38,27 @@ public class Driver {
 
                 // Case 4: Print a list of all dogs
                 case "4":
-                    printAnimals("dog");
+                    printAnimals(/*"dog"*/);
                     break;
 
                 // Case 5: Print a list of all monkeys
                 case "5":
-                    printAnimals("monkey");
+                    printAnimals(/*"monkey"*/);
                     break;
 
                 // Case 6: Print a list of all animals that are not reserved
                 case "6":
-                    printAnimals("reserved");
+                    printAnimals(/*"available"*/);
                     break;
 
                 // Quit application:
                 case "q":
+                    System.out.println("Exiting application...");
+                    scanner.close();
                     System.exit(0);
+
+                default:
+                    System.out.println("Invalid choice, please try again.");
             }
 
         }
@@ -89,9 +94,12 @@ public class Driver {
 
 
     // Adds monkeys to a list for testing
-    //Optional for testing
     public static void initializeMonkeyList() {
+        Monkey monkey1 = new Monkey("Camille", "Squirrel monkey", "female", "5", "30.2", "10-12-2022", "Venezuela", "Phase II", true, "United States", 0.32, 1.13, 1.12);
+        Monkey monkey2 = new Monkey("Coco", "Guenon", "female", "4", "4.0", "04-20-2021", "Kenya", "Phase I", false, "United States", 35.0, 45.0, 55.0);
 
+        monkeyList.add(monkey1);
+        monkeyList.add(monkey2);
     }
 
 
@@ -106,18 +114,100 @@ public class Driver {
             }
         }
 
-        // Add the code to instantiate a new dog and add it to the appropriate list
+        System.out.println("Enter breed:");
+        String breed = scanner.nextLine();
+
+        System.out.println("Enter gender:");
+        String gender = scanner.nextLine();
+
+        System.out.println("Enter age:");
+        String age = scanner.nextLine();
+
+        System.out.println("Enter weight:");
+        String weight = scanner.nextLine();
+
+        System.out.println("Enter acquisition date:");
+        String acquisitionDate = scanner.nextLine();
+
+        System.out.println("Enter acquisition country:");
+        String acquisitionCountry = scanner.nextLine();
+
+        System.out.println("Enter training status:");
+        String trainingStatus = scanner.nextLine();
+
+        System.out.println("Enter in service country:");
+        String inServiceCountry = scanner.nextLine();
+
+        boolean reserved = false;
+
+        // Initiating a new dog and adding it to the dog list
+        Dog newDog = new Dog(name, breed, gender, age, weight, acquisitionDate, acquisitionCountry, trainingStatus, reserved, inServiceCountry);
+        dogList.add(newDog);
+        System.out.println("New dog added successfully.");
     }
 
 
-        // Complete intakeNewMonkey
-	//Instantiate and add the new monkey to the appropriate list
-        // For the project submission you must also  validate the input
-	// to make sure the monkey doesn't already exist and the species type is allowed
+        // OPTION 2 IN MENU "Intake a new monkey"
         public static void intakeNewMonkey(Scanner scanner) {
-            System.out.println("The method intakeNewMonkey needs to be implemented");
+            System.out.println("What is the monkey's name?");
+            String name = scanner.nextLine();
+            for (Monkey monkey : monkeyList) {
+                if (monkey.getName().equalsIgnoreCase(name)) {
+                    System.out.println("\n\nThis monkey is already in our system\n\n");
+                    return;
+                }
+            }
+
+            // Code to input only allowed species
+            System.out.println("Enter species:");
+            String species = scanner.nextLine();
+            if (!species.equalsIgnoreCase("Capuchin") && !species.equalsIgnoreCase("Guenon") &&
+                    !species.equalsIgnoreCase("Macaque") && !species.equalsIgnoreCase("Marmoset") &&
+                    !species.equalsIgnoreCase("Squirrel monkey") && !species.equalsIgnoreCase("Tamarin")) {
+                System.out.println("Invalid species. Eligible species are Capuchin, Guenon, Macaque, Marmoset, Squirrel monkey, Tamarin.");
+                return;
+            }
+
+            System.out.println("Enter gender:");
+            String gender = scanner.nextLine();
+
+            System.out.println("Enter age:");
+            String age = scanner.nextLine();
+
+            System.out.println("Enter weight:");
+            String weight = scanner.nextLine();
+
+            System.out.println("Enter acquisition date:");
+            String acquisitionDate = scanner.nextLine();
+
+            System.out.println("Enter acquisition country:");
+            String acquisitionCountry = scanner.nextLine();
+
+            System.out.println("Enter training status:");
+            String trainingStatus = scanner.nextLine();
+
+            System.out.println("Enter in service country:");
+            String inServiceCountry = scanner.nextLine();
+
+            System.out.println("Enter tail length:");
+            double tailLength = Double.parseDouble(scanner.nextLine());
+
+            System.out.println("Enter height:");
+            double height = Double.parseDouble(scanner.nextLine());
+
+            System.out.println("Enter body length:");
+            double bodyLength = Double.parseDouble(scanner.nextLine());
+
+            boolean reserved = false;
+
+            // Initiating a new monkey and adding it to the monkey list
+            Monkey newMonkey = new Monkey(name, species, gender, age, weight, acquisitionDate, acquisitionCountry, trainingStatus, reserved, inServiceCountry, tailLength, height, bodyLength);
+            monkeyList.add(newMonkey);
+            System.out.println("New monkey added successfully.");
+
         }
 
+        // OPTION 3 IN MENU "reserveAnimal"
         // Complete reserveAnimal
         // You will need to find the animal by animal type and in service country
         public static void reserveAnimal(Scanner scanner) {
@@ -125,6 +215,7 @@ public class Driver {
 
         }
 
+        // OPTION 4,5 AND 6 IN MENU "printAnimals, dogs, monkeys and Animals that are not reserved"
         // Complete printAnimals
         // Include the animal name, status, acquisition country and if the animal is reserved.
 	// Remember that this method connects to three different menu items.
