@@ -19,6 +19,7 @@
 - [Array List](#array-list)
 - [UML Class Diagrams](#uml-class-diagrams)
 - [Using Classes in OOP](#using-classes-in-oop)
+- [Exceptions - Try...Catch](#exceptions---trycatch)
 
 ### Class:
 
@@ -564,3 +565,73 @@ public class ShoppingCartPrinter {
 5. Displaying Information:
 
    - The details of each item and the total cost are displayed using the `printItemPurchase()` method and `System.out.println()`.
+
+### Exceptions - Try...Catch:
+
+- Exceptions are events that occur during the execution of a program that, disrupts the normal flow of instruction.
+
+- We use exception along with `try` and `catch` to catch errors and handle them better.
+
+**Example dividing a number by zero error:**
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a whole number to divide: ");
+        int x = scanner.nextInt();
+
+        System.out.println("Enter a whole number to divide by: ");
+        int y = scanner.nextInt();
+
+        int z = x/y;
+
+        System.out.println("result: " + z);
+    }
+}
+```
+
+**To fix this we can do the following by using `try` and `catch`:**
+
+```java
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        try { // Here we put the code we want to try.
+
+            System.out.println("Enter a whole number to divide: ");
+            int x = scanner.nextInt();
+
+            System.out.println("Enter a whole number to divide by: ");
+            int y = scanner.nextInt();
+
+            int z = x / y;
+
+            System.out.println("result: " + z);
+        }
+        // This catches an ArithmeticException, meaning that there is a math error
+        catch (ArithmeticException e) {// Here we put the exception we try to catch and give it a name.
+            System.out.println("You can't divide by zero! IDIOT!");
+        }
+        // This catches an input mismatch like putting a word instead of a number in this case.
+        catch (InputMismatchException e) {
+            System.out.println("PLEASE ENTER A NUMBER OMFG!!!");
+        }
+        // This catches all kinds of exceptions, but it is considered lazy to use.
+        catch (Exception e) {
+            System.out.println("Something went wrong");
+        }
+        // This is a finally exception. it is usually used to close scanners or any other files we may have open.
+        finally {
+            Scanner.close();
+        }
+    }
+}
+```
