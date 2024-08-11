@@ -20,6 +20,7 @@
 - [UML Class Diagrams](#uml-class-diagrams)
 - [Using Classes in OOP](#using-classes-in-oop)
 - [Exceptions - Try...Catch](#exceptions---trycatch)
+- [APIs](#apis)
 
 ### Class:
 
@@ -635,3 +636,7 @@ public class Main {
     }
 }
 ```
+
+### APIs
+
+- [Oracle's Java API specification](https://docs.oracle.com/en/java/javase/12/docs/api/index.html)
