@@ -3,7 +3,11 @@
 ## Learning Resources:
 
 - [W3Schools](https://www.w3schools.com/java/default.asp) - java Documentation
-- [Java Full Course fo free ☕](https://www.youtube.com/watch?v=xk4_1vDrzzo) - YouTube Video ⏯️ by Bro Code
+- [Java Full Course fo free ☕](https://www.youtube.com/watch?v=xk4_1vDrzzo) - YouTube Video ⏯️ by Bro Code for learning how to code in java.
+- [Exercism.io](https://exercism.org/) - This community-oriented website allows you to explore a number of different programming languages, including Java. You will be given a coding problem and upload a solution, which will be reviewed by a “coach.” There are numerous problems that will allow you to continue practicing the skills you’ve learned in this course and develop new ones.
+- [Project Euler](https://projecteuler.net/) - This website gives you the opportunity to explore math-oriented programming problems and create solutions. It is a language-agnostic website, so you could practice implementing solutions to the problems in any programming language. Check out the “Archives” tab first to see some of the sample problems you can work to solve.
+- [Book: Learning Java by Building Android Games : Learn Java and Android From Scratch by Building Five Exciting Games, 3rd Edition](https://eds-p-ebscohost-com.ezproxy.snhu.edu/eds/detail/detail?vid=0&sid=0461ed1b-a56b-46d8-aa9d-037c829c915b%40redis&bdata=JnNpdGU9ZWRzLWxpdmUmc2NvcGU9c2l0ZQ%3d%3d#AN=2901983&db=nlebk) - This Shapiro Library reading will review the fundamentals of Java programming through building Android games. Exploring this resource will give you the opportunity to review many of the concepts and principles (such as loops, OOP principles, and so on) through problems based around Android games. As a note, the library only has access to one copy of this resource, so you may have to continue checking for when it is available.
+- [Neetcode.io](https://neetcode.io/) - Neetcode is a coding interview prep platform with tons of courses to help both beginners and experienced developers learn the coding skills they need to pass technical coding interviews.
 
 ## Table of Contents:
 
